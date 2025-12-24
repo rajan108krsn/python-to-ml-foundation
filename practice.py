@@ -521,20 +521,97 @@
 # print(result)
 
 
-import pandas as pd
-df = pd.DataFrame({ 
-    "Name": ["Krishna","Gopal", "Radhe","Shyama","Hari"],
-    "Class": [10,10,10,9,9],
-    "Gender": ['M','M','F','F','M']
-    "Marks":  [80,90,85,60,70]
-})
-print(df)
+# import pandas as pd
+# df = pd.DataFrame({ 
+#     "Name": ["Krishna","Gopal", "Radhe","Shyama","Hari"],
+#     "Class": [10,10,10,9,9],
+#     "Gender": ['M','M','F','F','M'],
+#     "Marks":  [80,90,85,60,70]
+# })
+# result = df.groupby(['Class','Gender'])['Marks'].mean().reset_index()
+# cnt = df.groupby('Class').count()
+# print(cnt)
+
 
 # /////////////////
 # ///////
-
-
 #
 
 #
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import pandas as pd
+# df1 = pd.DataFrame({
+#     'id': [1,2,3,4],
+#     "Name": ['Krishna','Gopal','Govind','Kishori']
+# })
+# df2 = pd.DataFrame({
+#     'std_id': [1,2,4,5],
+#     "marks": [89,44,98,99]
+# })
+# # result = pd.merge(df1,df2,on='id')
+# # result = pd.merge(df1,df2,on='id')
+# # print(result)
+# df1.set_index("id",inplace=True)
+# df2.set_index('std_id',inplace=True)
+# resultnew = df1.join(df2)
+
+# print(resultnew)
+
+df = pd.DataFrame({
+    "Name" : ["Krishna","Radhe","Gopal"],
+    "Maths":[23,66,88],
+    "Science":[34,68,88]
+})
+
+df["Maths"] = df["Maths"].apply(lambda x : x + 5)
+df["Marks"] = df.apply(
+    lambda x : x["Maths"] + x["Science"],
+    axis = 1
+)
+print(df)
+print()
+df["Result"] = df["Marks"].apply(
+    lambda x : "Pass" if x >= 100 else "Fail"
+)
+
+print(df)
