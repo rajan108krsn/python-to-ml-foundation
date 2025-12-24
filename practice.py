@@ -526,7 +526,7 @@ df = pd.DataFrame({
     "Name": ["Krishna","Gopal", "Radhe","Shyama","Hari"],
     "Class": [10,10,10,9,9],
     "Gender": ['M','M','F','F','M']
-    "Marks": [80,90,85,60,70]
+    "Marks":  [80,90,85,60,70]
 })
 print(df)
 
